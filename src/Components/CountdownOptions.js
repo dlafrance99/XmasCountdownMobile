@@ -17,37 +17,31 @@ const CountdownOptions = ({ navigation }) => {
                     <TouchableOpacity onPress={() => handleSwitchScreen('Home')}>
                         <Text h4 style={styles.optionsText}>
                             Home
-                    </Text>
+                        </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => handleSwitchScreen('Days')}>
+                    <TouchableOpacity onPress={() => handleSwitchScreen('Weeks')}>
                         <Text h4 style={styles.optionsText}>
-                            Days
-                    </Text>
+                            Weeks
+                        </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => handleSwitchScreen('Hours')}>
                         <Text h4 style={styles.optionsText}>
                             Hours
-                    </Text>
+                        </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => handleSwitchScreen('Minutes')}>
                         <Text h4 style={styles.optionsText}>
                             Minutes
-                    </Text>
+                        </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => handleSwitchScreen('Seconds')}>
                         <Text h4 style={styles.optionsText}>
                             Seconds
-                    </Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => handleSwitchScreen('Sleeps')}>
-                        <Text h4 style={styles.optionsText}>
-                            Sleeps
-                    </Text>
+                        </Text>
                     </TouchableOpacity>
 
                 </ScrollView>

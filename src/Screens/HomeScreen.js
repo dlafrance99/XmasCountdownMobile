@@ -1,31 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text } from 'react-native-elements';
-
-import { Context as TimeContext } from '../Context/TimeContext';
+import { AdMobBanner } from 'expo-ads-admob';
 
 import Header from '../Components/Header';
 import CountdownOptions from '../Components/CountdownOptions';
 import CountdownSubtitle from '../Components/CountdownSubtitle';
 import Spacer from '../Components/Spacer';
 import TimeData from '../Components/TimeData';
+import CountdownClock from '../Components/CountdownClock';
+import AdMob from '../Components/AdMob';
+
+import { Context as TimeContext } from '../Context/TimeContext';
 
 const HomeScreen = () => {
 
-    //Components
-    const { state: { currentDate, year, nextChristmas }, changeCurrentDate, changeYear, changeNextChristmas } = useContext(TimeContext)
-
-    //State
-    const [Days, setDays] = useState()
-    const [Hours, setHours] = useState()
-    const [Minutes, setMinutes] = useState()
-    const [Seconds, setSeconds] = useState()
-    const [Milliseconds, setMilliseconds] = useState()
+    //Context
+    const { state: { currentDate, nextChristmas }, changeCurrentDate } = useContext(TimeContext)
 
     //UseEffect
     useEffect(() => {
         updateDate()
-        setDates()
     }, [])
 
     //Functions
@@ -34,18 +28,38 @@ const HomeScreen = () => {
         changeCurrentDate(newDate)
     }
 
-    const setDates = () => {
-        let nextXmas = new Date(nextChristmas)
+    let nextXmas = new Date(nextChristmas)
 
-        setDays(((nextXmas - currentDate) / 86400000).toFixed(0))
-        setHours((((nextXmas - currentDate) % 86400000) / 3600000).toFixed(0))
-        setMinutes(((((nextXmas - currentDate) % 86400000) % 3600000) / 60000).toFixed(0))
-        setSeconds((((((nextXmas - currentDate) % 86400000) % 3600000) % 60000) / 1000).toFixed(0))
-        setMilliseconds((((((nextXmas - currentDate) % 86400000) % 3600000) % 60000) % 1000).toFixed(0))
+    const Days = () => {
+        let Days = Math.floor(((nextXmas - currentDate) / 86400000))
+
+        return (Days)
+    }
+
+    const Hours = () => {
+        let Hours = Math.floor((((nextXmas - currentDate) % 86400000) / 3600000))
+
+        return Hours
+    }
+
+    const Minutes = () => {
+        let Minutes = Math.floor(((((nextXmas - currentDate) % 86400000) % 3600000) / 60000))
+
+        return Minutes
+    }
+
+    const Seconds = () => {
+        let Seconds = Math.floor((((((nextXmas - currentDate) % 86400000) % 3600000) % 60000) / 1000))
+
+        return Seconds
     }
 
     return (
         <>
+            <CountdownClock
+                isActive={true}
+                target={() => updateDate()}
+            />
             <View style={styles.wrapper}>
                 <Header />
 
@@ -62,30 +76,31 @@ const HomeScreen = () => {
                 <Spacer />
 
                 <TimeData
-                    data={Days}
+                    data={Days()}
                     unit='Days'
                 />
 
                 <TimeData
-                    data={Hours}
+                    data={Hours()}
                     unit='Hours'
                 />
 
                 <TimeData
-                    data={Minutes}
+                    data={Minutes()}
                     unit='Minutes'
                 />
 
                 <TimeData
-                    data={Seconds}
+                    data={Seconds()}
                     unit='Seconds'
                 />
 
-                <TimeData
-                    data={Milliseconds}
-                    unit='Milliseconds'
+                <AdMobBanner
+                    bannerSize='fullBanner'
+                    adUnitID='ca-app-pub-8611757228555808/4448040617'
+                    servePersonalizedAds={false}
+                    onDidFailToReceiveAdWithError={(error) => console.log({ error })}
                 />
-
             </View>
         </>
     )

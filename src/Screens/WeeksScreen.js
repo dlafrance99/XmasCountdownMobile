@@ -10,8 +10,7 @@ import TimeData from '../Components/TimeData';
 
 import { Context as TimeContext } from '../Context/TimeContext';
 
-
-const HoursScreen = () => {
+const WeeksScreen = () => {
 
     //Context
     const { state: { currentDate, nextChristmas }, changeCurrentDate } = useContext(TimeContext)
@@ -29,9 +28,20 @@ const HoursScreen = () => {
 
     let nextXmas = new Date(nextChristmas)
 
+    const Weeks = () => {
+        let Weeks = Math.floor((nextXmas - currentDate) / 604800000)
+
+        return (Weeks)
+    }
+
+    const Days = () => {
+        let Days = Math.floor(((nextXmas - currentDate) % 604800000) / 86400000)
+
+        return (Days)
+    }
+
     const Hours = () => {
-        let Hours = Math.floor(((nextXmas - currentDate) / 3600000))
-        Hours = MakeNumberLegible(Hours)
+        let Hours = Math.floor((((nextXmas - currentDate) % 86400000) / 3600000))
 
         return Hours
     }
@@ -46,10 +56,6 @@ const HoursScreen = () => {
         let Seconds = Math.floor((((nextXmas - currentDate) % 60000) / 1000))
 
         return Seconds
-    }
-
-    const MakeNumberLegible = (value) => {
-        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     return (
@@ -68,10 +74,20 @@ const HoursScreen = () => {
                 <Spacer />
 
                 <CountdownSubtitle
-                    title='Hours'
+                    title='Weeks'
                 />
 
                 <Spacer />
+
+                <TimeData
+                    data={Weeks()}
+                    unit='Weeks'
+                />
+
+                <TimeData
+                    data={Days()}
+                    unit='Days'
+                />
 
                 <TimeData
                     data={Hours()}
@@ -100,4 +116,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default HoursScreen;
+export default WeeksScreen;
