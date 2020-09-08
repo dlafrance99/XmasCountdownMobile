@@ -3,14 +3,14 @@ import { View, StyleSheet } from 'react-native';
 
 import InfoIcon from '../Components/InfoIcon';
 import CountdownSubtitle from '../Components/CountdownSubtitle';
-import CountdownClock from '../Components/CountdownClock';
 import Spacer from '../Components/Spacer';
 import TimeData from '../Components/TimeData';
+import CountdownClock from '../Components/CountdownClock';
 import AdMob from '../Components/AdMob';
 
 import { Context as TimeContext } from '../Context/TimeContext';
 
-const WeeksScreen = () => {
+const DaysScreen = () => {
 
     //Context
     const { state: { currentDate, nextChristmas }, changeCurrentDate } = useContext(TimeContext)
@@ -28,14 +28,8 @@ const WeeksScreen = () => {
 
     let nextXmas = new Date(nextChristmas)
 
-    const Weeks = () => {
-        let Weeks = Math.floor((nextXmas - currentDate) / 604800000)
-
-        return (Weeks)
-    }
-
     const Days = () => {
-        let Days = Math.floor(((nextXmas - currentDate) % 604800000) / 86400000)
+        let Days = Math.floor(((nextXmas - currentDate) / 86400000))
 
         return (Days)
     }
@@ -47,13 +41,13 @@ const WeeksScreen = () => {
     }
 
     const Minutes = () => {
-        let Minutes = Math.floor((((nextXmas - currentDate) % 3600000) / 60000))
+        let Minutes = Math.floor(((((nextXmas - currentDate) % 86400000) % 3600000) / 60000))
 
         return Minutes
     }
 
     const Seconds = () => {
-        let Seconds = Math.floor((((nextXmas - currentDate) % 60000) / 1000))
+        let Seconds = Math.floor((((((nextXmas - currentDate) % 86400000) % 3600000) % 60000) / 1000))
 
         return Seconds
     }
@@ -65,22 +59,17 @@ const WeeksScreen = () => {
                 target={() => updateDate()}
             />
             <View style={styles.wrapper}>
-
+                
                 <Spacer />
                 <Spacer />
                 <Spacer />
 
                 <CountdownSubtitle
-                    title='Weeks Till'
+                    title='Days Till'
                     title2='Christmas:'
                 />
 
                 <Spacer />
-
-                <TimeData
-                    data={Weeks()}
-                    unit='Weeks'
-                />
 
                 <TimeData
                     data={Days()}
@@ -118,4 +107,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default WeeksScreen;
+export default DaysScreen;

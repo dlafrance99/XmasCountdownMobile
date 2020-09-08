@@ -1,106 +1,51 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { AdMobBanner } from 'expo-ads-admob';
+
 
 import Header from '../Components/Header';
 import CountdownOptions from '../Components/CountdownOptions';
-import CountdownSubtitle from '../Components/CountdownSubtitle';
-import Spacer from '../Components/Spacer';
-import TimeData from '../Components/TimeData';
-import CountdownClock from '../Components/CountdownClock';
-import AdMob from '../Components/AdMob';
 
-import { Context as TimeContext } from '../Context/TimeContext';
+import TodayScreen from '../Screens/TodayScreen';
+import WeeksScreen from '../Screens/WeeksScreen';
+import DaysScreen from '../Screens/DaysScreen';
+import HoursScreen from '../Screens/HoursScreen';
+import MinutesScreen from '../Screens/MinutesScreen';
+import SecondsScreen from '../Screens/SecondsScreen';
 
 const HomeScreen = () => {
+    //State
+    const [CurrentScreen, setCurrentScreen] = useState('Home')
 
-    //Context
-    const { state: { currentDate, nextChristmas }, changeCurrentDate } = useContext(TimeContext)
-
-    //UseEffect
-    useEffect(() => {
-        updateDate()
-    }, [])
-
-    //Functions
-    const updateDate = () => {
-        let newDate = new Date();
-        changeCurrentDate(newDate)
-    }
-
-    let nextXmas = new Date(nextChristmas)
-
-    const Days = () => {
-        let Days = Math.floor(((nextXmas - currentDate) / 86400000))
-
-        return (Days)
-    }
-
-    const Hours = () => {
-        let Hours = Math.floor((((nextXmas - currentDate) % 86400000) / 3600000))
-
-        return Hours
-    }
-
-    const Minutes = () => {
-        let Minutes = Math.floor(((((nextXmas - currentDate) % 86400000) % 3600000) / 60000))
-
-        return Minutes
-    }
-
-    const Seconds = () => {
-        let Seconds = Math.floor((((((nextXmas - currentDate) % 86400000) % 3600000) % 60000) / 1000))
-
-        return Seconds
+    const showScreen = () => {
+        if (CurrentScreen === 'Home') {
+            return (<TodayScreen />)
+        } else if (CurrentScreen === 'Weeks') {
+            return (<WeeksScreen />)
+        } else if (CurrentScreen === 'Days') {
+            return (<DaysScreen />)
+        } else if (CurrentScreen === 'Hours') {
+            return (<HoursScreen />)
+        } else if (CurrentScreen === 'Minutes') {
+            return (<MinutesScreen />)
+        } else if (CurrentScreen === 'Seconds') {
+            return (<SecondsScreen />)
+        }
     }
 
     return (
         <>
-            <CountdownClock
-                isActive={true}
-                target={() => updateDate()}
-            />
             <View style={styles.wrapper}>
-                <Header />
-
-                <CountdownOptions />
-
-                <Spacer />
-                <Spacer />
-                <Spacer />
-
-                <CountdownSubtitle
-                    title='Time'
+                <Header
+                    title='CHRISTMAS COUNTDOWN'
                 />
 
-                <Spacer />
-
-                <TimeData
-                    data={Days()}
-                    unit='Days'
+                <CountdownOptions
+                    target={(value) => setCurrentScreen(value)}
+                    Screen={CurrentScreen}
                 />
 
-                <TimeData
-                    data={Hours()}
-                    unit='Hours'
-                />
+                {showScreen()}
 
-                <TimeData
-                    data={Minutes()}
-                    unit='Minutes'
-                />
-
-                <TimeData
-                    data={Seconds()}
-                    unit='Seconds'
-                />
-
-                <AdMobBanner
-                    bannerSize='fullBanner'
-                    adUnitID='ca-app-pub-8611757228555808/4448040617'
-                    servePersonalizedAds={false}
-                    onDidFailToReceiveAdWithError={(error) => console.log({ error })}
-                />
             </View>
         </>
     )
@@ -110,7 +55,16 @@ const styles = StyleSheet.create({
     wrapper: {
         backgroundColor: '#0c9547',
         flex: 1
-    }
+    },
+    Text: {
+        fontFamily: 'Baskerville-BoldItalic',
+        color: '#c60606',
+        flex: 1,
+        textAlign: 'center',
+        marginHorizontal: 10
+
+    },
+
 })
 
 export default HomeScreen;

@@ -1,22 +1,22 @@
 import React from 'react';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation'
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 import ResolveCurrentDateScreen from './src/Screens/ResolveCurrentDateScreen';
 import HomeScreen from './src/Screens/HomeScreen';
-import WeeksScreen from './src/Screens/WeeksScreen';
-import HoursScreen from './src/Screens/HoursScreen';
-import MinutesScreen from './src/Screens/MinutesScreen';
-import SecondsScreen from './src/Screens/SecondsScreen';
+import InfoScreen from './src/Screens/InfoScreen';
 
 import { Provider as TimeProvider } from './src/Context/TimeContext';
 
 const switchNavigator = createSwitchNavigator({
   ResolveCurrentDate: ResolveCurrentDateScreen,
-  Home: HomeScreen,
-  Weeks: WeeksScreen,
-  Hours: HoursScreen,
-  Minutes: MinutesScreen,
-  Seconds: SecondsScreen,
+  NormalFlow: createStackNavigator({
+    Home: HomeScreen,
+    Info: InfoScreen
+  },
+    {
+      headerMode: 'none'
+    })
 },
   {
     headerMode: 'none'

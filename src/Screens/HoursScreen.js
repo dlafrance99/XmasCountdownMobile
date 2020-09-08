@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import Header from '../Components/Header';
-import CountdownOptions from '../Components/CountdownOptions';
+import InfoIcon from '../Components/InfoIcon';
 import CountdownSubtitle from '../Components/CountdownSubtitle';
 import CountdownClock from '../Components/CountdownClock';
 import Spacer from '../Components/Spacer';
 import TimeData from '../Components/TimeData';
+import AdMob from '../Components/AdMob';
 
 import { Context as TimeContext } from '../Context/TimeContext';
 
@@ -59,16 +59,14 @@ const HoursScreen = () => {
                 target={() => updateDate()}
             />
             <View style={styles.wrapper}>
-                <Header />
-
-                <CountdownOptions />
-
+            
                 <Spacer />
                 <Spacer />
                 <Spacer />
 
                 <CountdownSubtitle
-                    title='Hours'
+                    title='Hours Till'
+                    title2='Christmas:'
                 />
 
                 <Spacer />
@@ -89,6 +87,10 @@ const HoursScreen = () => {
                 />
 
             </View>
+
+            <InfoIcon />
+
+            <AdMob />
         </>
     )
 }

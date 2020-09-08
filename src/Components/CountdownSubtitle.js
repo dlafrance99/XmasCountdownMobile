@@ -2,15 +2,15 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Text } from 'react-native-elements';
 
-const CountdownSubtitle = ({ title }) => {
+const CountdownSubtitle = ({ title, title2 }) => {
     return (
         <>
             <Text h2 style={styles.Subtitle}>
-                {title} Till
+                {title}
             </Text>
 
             <Text h2 style={styles.Subtitle}>
-                Christmas:
+                {title2}
             </Text>
         </>
     )

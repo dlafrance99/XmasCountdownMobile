@@ -1,45 +1,58 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ScrollView, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { Text } from 'react-native-elements';
 
-const CountdownOptions = ({ navigation }) => {
+const CountdownOptions = ({ target, Screen }) => {
 
-    const handleSwitchScreen = (value) => {
-        navigation.navigate(value)
+    const TextStyle = (value) => {
+        if (value === Screen) {
+            return styles.SelectedText
+        } else {
+            return styles.optionsText
+        }
     }
 
     return (
         <>
-            <View >
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            <View style={styles.wrapper}>
+                <ScrollView
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                >
 
-                    <TouchableOpacity onPress={() => handleSwitchScreen('Home')}>
-                        <Text h4 style={styles.optionsText}>
+                    <TouchableOpacity onPress={() => target('Home')}>
+                        <Text h4 style={TextStyle('Home')}>
                             Home
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => handleSwitchScreen('Weeks')}>
-                        <Text h4 style={styles.optionsText}>
+                    <TouchableOpacity onPress={() => target('Weeks')}>
+                        <Text h4 style={TextStyle('Weeks')}>
                             Weeks
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => handleSwitchScreen('Hours')}>
-                        <Text h4 style={styles.optionsText}>
+                    <TouchableOpacity onPress={() => target('Days')}>
+                        <Text h4 style={TextStyle('Days')}>
+                            Days
+                        </Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => target('Hours')}>
+                        <Text h4 style={TextStyle('Hours')}>
                             Hours
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => handleSwitchScreen('Minutes')}>
-                        <Text h4 style={styles.optionsText}>
+                    <TouchableOpacity onPress={() => target('Minutes')}>
+                        <Text h4 style={TextStyle('Minutes')}>
                             Minutes
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => handleSwitchScreen('Seconds')}>
-                        <Text h4 style={styles.optionsText}>
+                    <TouchableOpacity onPress={() => target('Seconds')}>
+                        <Text h4 style={TextStyle('Seconds')}>
                             Seconds
                         </Text>
                     </TouchableOpacity>
@@ -53,8 +66,19 @@ const CountdownOptions = ({ navigation }) => {
 const styles = StyleSheet.create({
     optionsText: {
         fontFamily: 'Baskerville-BoldItalic',
-        color: '#c60606',
+        color: '#b52c2c',
         marginHorizontal: 15,
+    },
+    SelectedText: {
+        fontFamily: 'Baskerville-BoldItalic',
+        color: '#0c9547',
+        marginHorizontal: 15,
+        textShadowColor: '#c60606',
+        textShadowRadius: 2,
+    },
+    wrapper: {
+        paddingVertical: 10,
+        backgroundColor: '#f8f2f2'
     }
 })
 
