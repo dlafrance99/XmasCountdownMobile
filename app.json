@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "ChristamsCountdown",
-    "slug": "ChristamsCountdown",
+    "name": "Xmas Countdown!",
+    "slug": "xmas-countdown",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#09090a"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -17,6 +17,8 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.nawdevelopment.christmascountdown",
+      "buildNumber": "1.0.0",
       "supportsTablet": true,
       "config":{
         "googleMobileAdsAppId": "ca-app-pub-8611757228555808~3901245705"
