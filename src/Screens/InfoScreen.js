@@ -45,7 +45,7 @@ const InfoScreen = () => {
 
                     <Spacer />
 
-                    <TouchableOpacity onPress={() => openUrl('https://www.google.com/')}>
+                    <TouchableOpacity onPress={() => openUrl('https://docs.google.com/document/d/1gQ_XltK3mL76A3yiN_XeFO3K_2HxA2_vWTBPhYP_PRk/edit')}>
                         <Text h4 style={styles.urlText}>
                             Privacy Policy
                         </Text>
@@ -53,7 +53,7 @@ const InfoScreen = () => {
                     
                     <Spacer />
 
-                    <TouchableOpacity onPress={() => openUrl('https://www.google.com/')}>
+                    <TouchableOpacity onPress={() => openUrl('https://docs.google.com/document/d/1-5ZiAoXzUQLTHJXYdp5CVHP8gznryCs0HklFUje5eZQ/edit#heading=h.kitoga69q1dy')}>
                         <Text h4 style={styles.urlText}>
                             Terms of Use
                         </Text>
