@@ -10,7 +10,8 @@ const AdMob = () => {
                     bannerSize='smartBannerPortrait'
                     adUnitID='ca-app-pub-8611757228555808/4448040617'
                     servePersonalizedAds={false}
-                    onDidFailToReceiveAdWithError={(error) => console.log({ error })}
+                    onDidFailToReceiveAdWithError={(error) => console.log({ error })
+                    }
                 />
             </View>
         </>
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
         borderTopWidth: 5,
         borderTopColor: '#c60606',
         borderBottomWidth: 5,
-        borderBottomColor: '#c60606'
+        borderBottomColor: '#c60606',
     }
 })
 
