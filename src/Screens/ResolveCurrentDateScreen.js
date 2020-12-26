@@ -21,7 +21,7 @@ const ResolveCurrentDateScreen = ({ navigation }) => {
 
         if (currentDate >= nextXmasDate) {
             changeYear(year + 1)
-            changeNextChristmas('December 25 ' + year + 1 + '00:00')
+            changeNextChristmas('December 25 ' + (year + 1) + ' 00:00')
         }
 
         navigation.navigate('Home')

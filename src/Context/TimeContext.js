@@ -34,5 +34,5 @@ const changeNextChristmas = (dispatch) => {
 export const { Provider, Context } = createDataContext(
     TimeReducer,
     { changeCurrentDate, changeYear, changeNextChristmas },
-    { nextChristmas: 'December 25 2020 00:00', currentDate: 0, year: 2020 }
+    { nextChristmas: 'December 25 2021 00:00', currentDate: 0, year: 2021 }
 )
