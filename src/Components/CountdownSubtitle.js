@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontFamily: 'Baskerville-BoldItalic',
         color: '#f8f2f2'
-
+        
     }
 })
 

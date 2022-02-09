@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 
+import Snow from 'react-native-snow-bg';
 
 import Header from '../Components/Header';
 import CountdownOptions from '../Components/CountdownOptions';
@@ -35,6 +36,7 @@ const HomeScreen = () => {
     return (
         <>
             <View style={styles.wrapper}>
+                <Snow fullScreen snowflakesCount={100} fallSpeed='medium' />
                 <Header
                     title='CHRISTMAS COUNTDOWN'
                 />

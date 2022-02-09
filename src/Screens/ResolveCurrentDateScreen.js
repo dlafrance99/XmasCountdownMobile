@@ -17,11 +17,13 @@ const ResolveCurrentDateScreen = ({ navigation }) => {
         const currentDate = new Date();
         const nextXmasDate = new Date(nextChristmas)
 
+        console.log(currentDate.getFullYear())
+
         await changeCurrentDate(currentDate)
 
         if (currentDate >= nextXmasDate) {
-            changeYear(year + 1)
-            changeNextChristmas('December 25 ' + (year + 1) + ' 00:00')
+            changeYear(currentDate.getFullYear())
+            changeNextChristmas('December 25 ' + (currentDate.getFullYear()) + ' 00:00')
         }
 
         navigation.navigate('Home')

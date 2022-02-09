@@ -74,8 +74,9 @@ const SecondsScreen = () => {
 
 const styles = StyleSheet.create({
     wrapper: {
-        backgroundColor: '#0c9547',
-        flex: 1
+        flex: 1,
+        justifyContent: 'center',
+        bottom: 30
     }
 })
 

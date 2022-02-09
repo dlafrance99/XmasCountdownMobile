@@ -59,17 +59,12 @@ const WeeksScreen = () => {
     }
 
     return (
-        <>
+        <>         
             <CountdownClock
                 isActive={true}
                 target={() => updateDate()}
             />
             <View style={styles.wrapper}>
-
-                <Spacer />
-                <Spacer />
-                <Spacer />
-
                 <CountdownSubtitle
                     title='Weeks Till'
                     title2='Christmas:'
@@ -113,8 +108,9 @@ const WeeksScreen = () => {
 
 const styles = StyleSheet.create({
     wrapper: {
-        backgroundColor: '#0c9547',
-        flex: 1
+        flex: 1,
+        justifyContent: 'center',
+        bottom: 30
     }
 })
 

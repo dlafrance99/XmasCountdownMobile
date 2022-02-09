@@ -2,6 +2,8 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Text } from 'react-native-elements';
 
+import Snow from 'react-native-snow-bg';
+
 import Header from '../Components/Header';
 import AdMob from '../Components/AdMob';
 import Spacer from '../Components/Spacer';
@@ -25,6 +27,7 @@ const InfoScreen = () => {
                 />
 
                 <View style={styles.wrapper}>
+                    <Snow fullScreen snowflakesCount={100} fallSpeed='medium' />
                     <Spacer />
 
                     <Text h4 style={styles.text}>
@@ -50,7 +53,7 @@ const InfoScreen = () => {
                             Privacy Policy
                         </Text>
                     </TouchableOpacity>
-                    
+
                     <Spacer />
 
                     <TouchableOpacity onPress={() => openUrl('https://docs.google.com/document/d/1-5ZiAoXzUQLTHJXYdp5CVHP8gznryCs0HklFUje5eZQ/edit#heading=h.kitoga69q1dy')}>

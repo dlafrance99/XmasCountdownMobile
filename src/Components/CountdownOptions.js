@@ -21,37 +21,37 @@ const CountdownOptions = ({ target, Screen }) => {
                     showsHorizontalScrollIndicator={false}
                 >
 
-                    <TouchableOpacity onPress={() => target('Home')}>
+                    <TouchableOpacity style={styles.Butt} onPress={() => target('Home')}>
                         <Text h4 style={TextStyle('Home')}>
                             Home
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => target('Weeks')}>
+                    <TouchableOpacity style={styles.Butt} onPress={() => target('Weeks')}>
                         <Text h4 style={TextStyle('Weeks')}>
                             Weeks
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => target('Days')}>
+                    <TouchableOpacity style={styles.Butt} onPress={() => target('Days')}>
                         <Text h4 style={TextStyle('Days')}>
                             Days
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => target('Hours')}>
+                    <TouchableOpacity style={styles.Butt} onPress={() => target('Hours')}>
                         <Text h4 style={TextStyle('Hours')}>
                             Hours
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => target('Minutes')}>
+                    <TouchableOpacity style={styles.Butt} onPress={() => target('Minutes')}>
                         <Text h4 style={TextStyle('Minutes')}>
                             Minutes
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => target('Seconds')}>
+                    <TouchableOpacity style={styles.Butt} onPress={() => target('Seconds')}>
                         <Text h4 style={TextStyle('Seconds')}>
                             Seconds
                         </Text>
@@ -69,15 +69,18 @@ const styles = StyleSheet.create({
         color: '#b52c2c',
         marginHorizontal: 15,
     },
+    Butt: {
+        justifyContent: 'center'
+    },
     SelectedText: {
         fontFamily: 'Baskerville-BoldItalic',
         color: '#0c9547',
         marginHorizontal: 15,
         textShadowColor: '#c60606',
         textShadowRadius: 2,
+        paddingVertical: 10,
     },
     wrapper: {
-        paddingVertical: 10,
         backgroundColor: '#f8f2f2'
     }
 })

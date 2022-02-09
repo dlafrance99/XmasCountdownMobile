@@ -33,12 +33,8 @@ const HomeScreen = () => {
                 isActive={true}
                 target={() => updateDate()}
             />
+
             <View style={styles.wrapper}>
-
-                <Spacer />
-                <Spacer />
-                <Spacer />
-
                 <CountdownSubtitle
                     title='Is Today'
                     title2='Christmas?'
@@ -60,16 +56,15 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
     wrapper: {
-        backgroundColor: '#0c9547',
-        flex: 1
+        flex: 1,
+        justifyContent: 'center',
+        bottom: 30
     },
     Text: {
         fontFamily: 'Baskerville-BoldItalic',
         color: '#c60606',
-        flex: 1,
         textAlign: 'center',
-        marginHorizontal: 10
-
+        marginHorizontal: 10,
     },
 
 })
