@@ -17,8 +17,6 @@ const ResolveCurrentDateScreen = ({ navigation }) => {
         const currentDate = new Date();
         const nextXmasDate = new Date(nextChristmas)
 
-        console.log(currentDate.getFullYear())
-
         await changeCurrentDate(currentDate)
 
         if (currentDate >= nextXmasDate) {

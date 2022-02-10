@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ScrollView, View, TouchableOpacity, StyleSheet } from 'react-native';
-import { withNavigation } from 'react-navigation';
 import { Text } from 'react-native-elements';
 
 const CountdownOptions = ({ target, Screen }) => {
@@ -19,40 +18,41 @@ const CountdownOptions = ({ target, Screen }) => {
                 <ScrollView
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
+                    style={{height: 75}}
                 >
 
                     <TouchableOpacity style={styles.Butt} onPress={() => target('Home')}>
-                        <Text h4 style={TextStyle('Home')}>
+                        <Text h3 style={TextStyle('Home')}>
                             Home
                         </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.Butt} onPress={() => target('Weeks')}>
-                        <Text h4 style={TextStyle('Weeks')}>
+                        <Text h3 style={TextStyle('Weeks')}>
                             Weeks
                         </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.Butt} onPress={() => target('Days')}>
-                        <Text h4 style={TextStyle('Days')}>
+                        <Text h3 style={TextStyle('Days')}>
                             Days
                         </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.Butt} onPress={() => target('Hours')}>
-                        <Text h4 style={TextStyle('Hours')}>
+                        <Text h3 style={TextStyle('Hours')}>
                             Hours
                         </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.Butt} onPress={() => target('Minutes')}>
-                        <Text h4 style={TextStyle('Minutes')}>
+                        <Text h3 style={TextStyle('Minutes')}>
                             Minutes
                         </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.Butt} onPress={() => target('Seconds')}>
-                        <Text h4 style={TextStyle('Seconds')}>
+                        <Text h3 style={TextStyle('Seconds')}>
                             Seconds
                         </Text>
                     </TouchableOpacity>
@@ -78,11 +78,11 @@ const styles = StyleSheet.create({
         marginHorizontal: 15,
         textShadowColor: '#c60606',
         textShadowRadius: 2,
-        paddingVertical: 10,
+        paddingVertical: 15,
     },
     wrapper: {
         backgroundColor: '#f8f2f2'
     }
 })
 
-export default withNavigation(CountdownOptions);
+export default (CountdownOptions);
