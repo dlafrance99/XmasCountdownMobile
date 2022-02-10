@@ -32,9 +32,9 @@ const HomeScreen = () => {
 
     return (
         <>
-        <BGImage 
-            
-        />
+            <BGImage
+                pic={require('../../Images/Santa.png')}
+            />
             <CountdownClock
                 isActive={true}
                 target={() => updateDate()}

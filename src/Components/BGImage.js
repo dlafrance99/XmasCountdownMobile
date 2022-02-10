@@ -33,7 +33,7 @@ const BGImage = ({ pic }) => {
     return (
         <>
             <Image
-                source={require('../../Images/Santa.png')}
+                source={pic}
                 style={styles.picStyle}
             />
         </>

@@ -18,7 +18,7 @@ const CountdownOptions = ({ target, Screen }) => {
                 <ScrollView
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
-                    style={{height: 75}}
+                    style={{height: 75, borderWidth: 3}}
                 >
 
                     <TouchableOpacity style={styles.Butt} onPress={() => target('Home')}>
@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 15,
     },
     Butt: {
-        justifyContent: 'center'
+        justifyContent: 'center',
+        borderWidth: 1
     },
     SelectedText: {
         fontFamily: 'Baskerville-BoldItalic',

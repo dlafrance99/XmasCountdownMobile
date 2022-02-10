@@ -7,6 +7,7 @@ import CountdownClock from '../Components/CountdownClock';
 import Spacer from '../Components/Spacer';
 import TimeData from '../Components/TimeData';
 import AdMob from '../Components/AdMob';
+import BGImage from '../Components/BGImage';
 
 import { Context as TimeContext } from '../Context/TimeContext';
 
@@ -59,7 +60,10 @@ const WeeksScreen = () => {
     }
 
     return (
-        <>         
+        <>
+            <BGImage
+                pic={require('../../Images/Rudolph.png')}
+            />
             <CountdownClock
                 isActive={true}
                 target={() => updateDate()}
