@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import { Text } from 'react-native-elements';
 
 import CountdownSubtitle from '../Components/CountdownSubtitle';
@@ -7,6 +7,9 @@ import Spacer from '../Components/Spacer';
 import CountdownClock from '../Components/CountdownClock';
 import AdMob from '../Components/AdMob';
 import InfoIcon from '../Components/InfoIcon';
+import BGImage from '../Components/BGImage';
+
+import Santa from '../../Images/Santa.png'
 
 const HomeScreen = () => {
     //State
@@ -29,6 +32,9 @@ const HomeScreen = () => {
 
     return (
         <>
+        <BGImage 
+            
+        />
             <CountdownClock
                 isActive={true}
                 target={() => updateDate()}
@@ -58,7 +64,7 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         justifyContent: 'center',
-        bottom: 30
+        bottom: 90
     },
     Text: {
         fontFamily: 'Baskerville-BoldItalic',

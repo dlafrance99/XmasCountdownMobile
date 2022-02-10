@@ -56,7 +56,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
     wrapper: {
         backgroundColor: '#0c9547',
-        flex: 1
+        flex: 1,
     },
     Text: {
         fontFamily: 'Baskerville-BoldItalic',
