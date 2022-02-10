@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import Header from '../Components/Header';
-import CountdownOptions from '../Components/CountdownOptions';
+import NavBar from '../Components/NavBar';
 
 import TodayScreen from '../Screens/TodayScreen';
 import WeeksScreen from '../Screens/WeeksScreen';
@@ -10,6 +10,8 @@ import DaysScreen from '../Screens/DaysScreen';
 import HoursScreen from '../Screens/HoursScreen';
 import MinutesScreen from '../Screens/MinutesScreen';
 import SecondsScreen from '../Screens/SecondsScreen';
+
+import Snow from 'react-native-snow-bg'
 
 const HomeScreen = () => {
     //State
@@ -33,12 +35,13 @@ const HomeScreen = () => {
 
     return (
         <>
-            <View style={styles.wrapper}>                
+            <View style={styles.wrapper}>
+                <Snow fallSpeed='medium' snowflakesCount={100}/>
                 <Header
                     title='CHRISTMAS COUNTDOWN'
                 />
 
-                <CountdownOptions
+                <NavBar
                     target={(value) => setCurrentScreen(value)}
                     Screen={CurrentScreen}
                 />

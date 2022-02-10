@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         justifyContent: 'center',
-        bottom: 30
+        bottom: 200
     }
 })
 

@@ -7,6 +7,7 @@ import CountdownClock from '../Components/CountdownClock';
 import Spacer from '../Components/Spacer';
 import TimeData from '../Components/TimeData';
 import AdMob from '../Components/AdMob';
+import BGImage from '../Components/BGImage';
 
 import { Context as TimeContext } from '../Context/TimeContext';
 
@@ -54,6 +55,9 @@ const HoursScreen = () => {
 
     return (
         <>
+        <BGImage
+                pic={require('../../Images/cane.png')}
+            />
             <CountdownClock
                 isActive={true}
                 target={() => updateDate()}
@@ -99,7 +103,7 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         justifyContent: 'center',
-        bottom: 30
+        bottom: 200
     }
 })
 

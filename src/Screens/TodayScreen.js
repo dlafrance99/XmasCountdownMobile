@@ -34,6 +34,7 @@ const HomeScreen = () => {
         <>
             <BGImage
                 pic={require('../../Images/Santa.png')}
+                side='right'
             />
             <CountdownClock
                 isActive={true}
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         justifyContent: 'center',
-        bottom: 90
+        bottom: 200
     },
     Text: {
         fontFamily: 'Baskerville-BoldItalic',

@@ -13,7 +13,7 @@ import { Text } from 'react-native-elements';
 
 
 const SCREENHEIGHT = Dimensions.get('window').height
-const BGImage = ({ pic }) => {
+const BGImage = ({ pic, side }) => {
 
     //State------------------------------------------------------
 
@@ -22,7 +22,13 @@ const BGImage = ({ pic }) => {
 
 
     //Functions--------------------------------------------------
-
+    const chooseSide = () => {
+        if (side === 'right') {
+            return styles.picStyle
+        } else {
+            return styles.picStyleLeft
+        }
+    }
 
     //Show-------------------------------------------------------
 
@@ -34,7 +40,7 @@ const BGImage = ({ pic }) => {
         <>
             <Image
                 source={pic}
-                style={styles.picStyle}
+                style={chooseSide()}
             />
         </>
     )
@@ -46,8 +52,16 @@ const styles = StyleSheet.create({
         height: .4 * SCREENHEIGHT,
         width: .36 * SCREENHEIGHT,
         position: 'absolute',
-        bottom: 50,
+        bottom: -10,
         right: 0
+    },
+    picStyleLeft: {
+        resizeMode: 'contain',
+        height: .4 * SCREENHEIGHT,
+        width: .36 * SCREENHEIGHT,
+        position: 'absolute',
+        bottom: -10,
+        left: -40
     }
 })
 

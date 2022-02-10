@@ -4585,6 +4585,11 @@ react-native-size-matters@^0.3.1:
   resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.3.1.tgz#24d0cfc335a2c730f6d58bd7b43ea5a41be4b49f"
   integrity sha512-mKOfBLIBFBcs9br1rlZDvxD5+mAl8Gfr5CounwJtxI6Z82rGrMO+Kgl9EIg3RMVf3G855a85YVqHJL2f5EDRlw==
 
+react-native-snow-bg@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-snow-bg/-/react-native-snow-bg-1.0.0.tgz#69be856e2ca536864a1fc7f4ce634529973b795a"
+  integrity sha512-xD2XCw/TVipK884p+K3PPE5sVh7BGcngi5zeZlq/3upMXOkfWJASzBU1v1oWplzBiF7FdEOor1KQAyabWrsjSg==
+
 react-native-web@0.17.1:
   version "0.17.1"
   resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.17.1.tgz#90d473c89dd99b88bc9830b2a9fcdd2fc5f04902"
