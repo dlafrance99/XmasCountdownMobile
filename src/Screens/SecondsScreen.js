@@ -43,7 +43,7 @@ const SecondsScreen = () => {
     return (
         <>
             <BGImage
-                pic={require('../../Images/Rudolph.png')}
+                pic={require('../../Images/Present.png')}
             />
             <CountdownClock
                 isActive={true}

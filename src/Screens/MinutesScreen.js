@@ -50,7 +50,7 @@ const MinutesScreen = () => {
     return (
         <>
         <BGImage
-                pic={require('../../Images/Rudolph.png')}
+                pic={require('../../Images/Snowman.png')}
                 side='right'
             />
             <CountdownClock
