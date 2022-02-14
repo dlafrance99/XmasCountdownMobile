@@ -1,6 +1,6 @@
 //Imports
 import React, { useState, useContext, useEffect } from 'react';
-import { View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
 import { Text } from 'react-native-elements';
 
 //Components
@@ -11,6 +11,7 @@ import { Text } from 'react-native-elements';
 
 //Style
 
+const SCREEN_HEIGHT = Dimensions.get('window').height
 const NavBar = ({ target, Screen }) => {
 
     //State------------------------------------------------------
@@ -36,7 +37,7 @@ const NavBar = ({ target, Screen }) => {
 
     return (
         <>
-            <View style={{flex:1, height: 5}}>
+            <View style={{ flex: 1, maxHeight: .09*SCREEN_HEIGHT }}>
                 <ScrollView
                     horizontal
                     style={styles.ScrollStyle}
@@ -83,7 +84,7 @@ const NavBar = ({ target, Screen }) => {
 const styles = StyleSheet.create({
     Wrapper: {
         backgroundColor: '#f8f2f2',
-        maxHeight: 75,
+        maxHeight: .09* SCREEN_HEIGHT,
     },
     optionsText: {
         fontFamily: 'Baskerville-BoldItalic',

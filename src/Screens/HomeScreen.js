@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Dimensions, SafeAreaView } from 'react-native';
 
 import Header from '../Components/Header';
 import NavBar from '../Components/NavBar';
@@ -13,6 +13,7 @@ import SecondsScreen from '../Screens/SecondsScreen';
 
 import Snow from 'react-native-snow-bg'
 
+const SCREEN_HEIGHT = Dimensions.get('window').height
 const HomeScreen = () => {
     //State
     const [CurrentScreen, setCurrentScreen] = useState('Home')
@@ -36,9 +37,9 @@ const HomeScreen = () => {
     return (
         <>
             <View style={styles.wrapper}>
-                <Snow fallSpeed='medium' snowflakesCount={100}/>
+                <Snow fallSpeed='medium' snowflakesCount={100} />
                 <Header
-                    title='CHRISTMAS COUNTDOWN'
+                    title='XMAS COUNTDOWN!'
                 />
 
                 <NavBar
@@ -46,7 +47,9 @@ const HomeScreen = () => {
                     Screen={CurrentScreen}
                 />
 
-                {showScreen()}
+                <View style={{ flex:1 }}>
+                    {showScreen()}
+                </View>
 
             </View>
         </>

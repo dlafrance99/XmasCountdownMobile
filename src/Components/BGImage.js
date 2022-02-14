@@ -53,15 +53,15 @@ const styles = StyleSheet.create({
         width: .36 * SCREENHEIGHT,
         position: 'absolute',
         bottom: -10,
-        right: 0
+        right: 0,
     },
     picStyleLeft: {
         resizeMode: 'contain',
         height: .4 * SCREENHEIGHT,
         width: .36 * SCREENHEIGHT,
         position: 'absolute',
-        bottom: -10,
-        left: -40
+        bottom: 0,
+        left: -10,
     }
 })
 

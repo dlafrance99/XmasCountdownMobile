@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Dimensions } from 'react-native';
 
 import InfoIcon from '../Components/InfoIcon';
 import CountdownSubtitle from '../Components/CountdownSubtitle';
@@ -11,6 +11,7 @@ import BGImage from '../Components/BGImage';
 
 import { Context as TimeContext } from '../Context/TimeContext';
 
+const SCREEN_HEIGHT = Dimensions.get('window').height
 const SecondsScreen = () => {
     //Context
     const { state: { currentDate, nextChristmas }, changeCurrentDate } = useContext(TimeContext)
@@ -44,16 +45,13 @@ const SecondsScreen = () => {
         <>
             <BGImage
                 pic={require('../../Images/Present.png')}
+                side='right'
             />
             <CountdownClock
                 isActive={true}
                 target={() => updateDate()}
             />
             <View style={styles.wrapper}>
-
-                <Spacer />
-                <Spacer />
-                <Spacer />
 
                 <CountdownSubtitle
                     title='Seconds Till'
@@ -79,8 +77,8 @@ const SecondsScreen = () => {
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
-        justifyContent: 'center',
-        bottom: 200
+        justifyContent: 'flex-start',
+        paddingTop: .05 * SCREEN_HEIGHT
     }
 })
 

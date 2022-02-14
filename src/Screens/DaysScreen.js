@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Dimensions } from 'react-native';
 
 import InfoIcon from '../Components/InfoIcon';
 import CountdownSubtitle from '../Components/CountdownSubtitle';
@@ -11,6 +11,7 @@ import BGImage from '../Components/BGImage';
 
 import { Context as TimeContext } from '../Context/TimeContext';
 
+const SCREEN_HEIGHT = Dimensions.get('window').height
 const DaysScreen = () => {
 
     //Context
@@ -57,17 +58,12 @@ const DaysScreen = () => {
         <>
             <BGImage
                 pic={require('../../Images/Tree.png')}
-                side='right'
             />
             <CountdownClock
                 isActive={true}
                 target={() => updateDate()}
             />
             <View style={styles.wrapper}>
-
-                <Spacer />
-                <Spacer />
-                <Spacer />
 
                 <CountdownSubtitle
                     title='Days Till'
@@ -108,8 +104,8 @@ const DaysScreen = () => {
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
-        justifyContent: 'center',
-        bottom: 200
+        justifyContent: 'flex-start',
+        paddingTop: .05 * SCREEN_HEIGHT
     }
 })
 

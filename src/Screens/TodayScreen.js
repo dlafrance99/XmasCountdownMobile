@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, Dimensions } from 'react-native';
 import { Text } from 'react-native-elements';
 
 import CountdownSubtitle from '../Components/CountdownSubtitle';
@@ -11,6 +11,8 @@ import BGImage from '../Components/BGImage';
 
 import Santa from '../../Images/Santa.png'
 
+
+const SCREEN_HEIGHT = Dimensions.get('window').height
 const HomeScreen = () => {
     //State
     const [Answer, setAnswer] = useState('No, Today is Not Christmas')
@@ -64,8 +66,8 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
-        justifyContent: 'center',
-        bottom: 200
+        justifyContent: 'flex-start',
+        paddingTop: .05 * SCREEN_HEIGHT
     },
     Text: {
         fontFamily: 'Baskerville-BoldItalic',

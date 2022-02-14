@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet,Dimensions } from 'react-native';
 
 import InfoIcon from '../Components/InfoIcon';
 import CountdownSubtitle from '../Components/CountdownSubtitle';
@@ -11,6 +11,8 @@ import BGImage from '../Components/BGImage';
 
 import { Context as TimeContext } from '../Context/TimeContext';
 
+
+const SCREEN_HEIGHT = Dimensions.get('window').height
 const WeeksScreen = () => {
 
     //Context
@@ -113,8 +115,8 @@ const WeeksScreen = () => {
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
-        justifyContent: 'center',
-        bottom: 200
+        justifyContent: 'flex-start',
+        paddingTop: .05 * SCREEN_HEIGHT
     }
 })
 

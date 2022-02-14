@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import { withNavigation } from 'react-navigation'
 import { Text } from 'react-native-elements';
 
@@ -8,6 +8,8 @@ import { Ionicons } from '@expo/vector-icons';
 import AdMob from './AdMob'
 import { AdMobBanner } from 'expo-ads-admob';
 
+
+const SCREEN_HEIGHT = Dimensions.get('window').height
 const Header = ({ title, navigation }) => {
 
     const showContent = () => {
@@ -53,7 +55,7 @@ const Header = ({ title, navigation }) => {
 
 const styles = StyleSheet.create({
     Header: {
-        marginTop: 50,
+        marginTop: .05*SCREEN_HEIGHT,
         backgroundColor: '#c60606',
         flexDirection: 'row',
         justifyContent: 'space-between'
