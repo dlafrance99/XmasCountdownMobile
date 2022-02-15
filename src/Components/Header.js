@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     },
     Butt: {
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
     }
 })
 

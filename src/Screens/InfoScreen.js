@@ -2,8 +2,6 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Text } from 'react-native-elements';
 
-import Snow from 'react-native-snow-bg';
-
 import Header from '../Components/Header';
 import AdMob from '../Components/AdMob';
 import Spacer from '../Components/Spacer';
@@ -26,7 +24,6 @@ const InfoScreen = () => {
                     title='INFO'
                 />
 
-                <Snow fullScreen snowflakesCount={100} fallSpeed='medium' />
                 <View style={{flex: 1}}>
                     <Spacer />
 
